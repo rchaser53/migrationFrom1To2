@@ -1,0 +1,30 @@
+{
+  "name": "migrationFrom1To2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "webpack": "webpack",
+    "vue-migration-helper": "vue-migration-helper"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchaser53/migrationFrom1To2.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/rchaser53/migrationFrom1To2/issues"
+  },
+  "homepage": "https://github.com/rchaser53/migrationFrom1To2#readme",
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "html-loader": "^0.4.5",
+    "vue": "^1.0.0",
+    "vue-loader": "^12.2.1",
+    "vue-migration-helper": "^1.1.6",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}
