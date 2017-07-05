@@ -4,28 +4,20 @@ var app = new Vue({
   el: '#app',
   template: `
     <div>
-      <button v-on:click='switch'>switch</button>
-      <div v-if='flag' transition="fade">
+      <button v-on:click='toggle'>toggle</button>
+      
+      <transition v-if='flag' name="fade">
         <p>hoge-</p>
-      </div>
+      </transition>
     </div>
   `,
   data: {
     flag: true
   },
   methods: {
-    switch: function() {
+    toggle: function() {
       console.log(1234)
       this.flag = !this.flag
     }
-  }
-})
-
-Vue.transition('fade', {
-  afterEnter: function(element, done) {
-    console.log('after')
-  },
-  leave: function(element, done) {
-    console.log('leave')
   }
 })
