@@ -9,27 +9,27 @@ var app = new Vue({
   template: `
     <div>
       <button v-on:click='toggle'>toggle</button>
-      <transition-group v-if='flag' name="fade">
-        <p key='hoge' v-bind:class="multiple(numA, numB)">hoge-</p>
-      </transition-group>
-      111
-        <modal key='test2' :effect='"show"' :value='flag'>
-          <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">Modal title</h4>
-          </div>
-          <div slot="modal-body" class="modal-body">...</div>
-        </modal>
+      <modal key='test2' :callback='toggle' effect="fade" :value='flag'>
+        <div slot="modal-header" class="modal-header">
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div slot="modal-body" class="modal-body">gya-n</div>
+      </modal>
     </div>
   `,
   data: {
-    flag: true,
+    flag: false,
     numA: 11,
     numB: 12
   },
+  mounted: function() {
+    document.querySelector('.modal').addEventListener('click', () => {
+      Vue.set(this, 'flag', false)
+    })
+  },
   methods: {
     toggle: function() {
-      console.log(1234)
-      this.flag = !this.flag
+      Vue.set(this, 'flag', !this.flag)
     },
     multiple: function(numA, numB) {
       return `class${numA * numB}`
