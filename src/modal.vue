@@ -1,6 +1,6 @@
 <template>
   <div role="dialog" :class="['modal',effect]" @click="backdrop&&action(false,1)" @transitionend="transition = false">
-    <div :class="['modal-dialog',{'modal-lg':large,'modal-sm':small}]" role="document" :style="{width: optionalWidth}" @click.stop="action(null)">
+    <div :class="['modal-dialog',{'modal-lg':large,'modal-sm':small}]" role="document" @click.stop="action(null)">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
@@ -60,23 +60,12 @@ export default {
     okText: {type: String, default: 'Save changes'},
     small: {type: Boolean, default: false},
     title: {type: String, default: ''},
-    value: {type: Boolean, required: true},
-    width: {default: null}
+    value: {type: Boolean, required: true}
   },
   data () {
     return {
       transition: false,
       val: null
-    }
-  },
-  computed: {
-    optionalWidth () {
-      if (this.width === null) {
-        return null
-      } else if (Number.isInteger(this.width)) {
-        return this.width + 'px'
-      }
-      return this.width
     }
   },
   watch: {
