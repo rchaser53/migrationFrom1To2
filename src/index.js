@@ -1,5 +1,5 @@
 const Vue = require('vue')
-const modal = require('vue-strap/src/Modal.vue');
+const modal = require('./modal.vue');
 
 var app = new Vue({
   el: '#app',
