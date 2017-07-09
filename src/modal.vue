@@ -22,21 +22,30 @@
 
 <script>
 function getScrollBarWidth () {
-  if (document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+  const scrollHeight = document.documentElement.scrollHeight
+  const clientHeight = document.documentElement.clientHeight
+
+  console.log(scrollHeight, clientHeight, scrollHeight <= clientHeight)
+  if (scrollHeight <= clientHeight) {
     return 0
   }
+
   let inner = document.createElement('p')
-  inner.style.width = '100%'
-  inner.style.height = '200px'
+  inner.style = {
+    width: '100%',
+    height: '200px'
+  }
 
   let outer = document.createElement('div')
-  outer.style.position = 'absolute'
-  outer.style.top = '0px'
-  outer.style.left = '0px'
-  outer.style.visibility = 'hidden'
-  outer.style.width = '200px'
-  outer.style.height = '150px'
-  outer.style.overflow = 'hidden'
+  outer.style = {
+    position: 'absolute',
+    top: '0px',
+    left: '0px',
+    visibility: 'hidden',
+    width: '200px',
+    height: '150px',
+    overflow: 'hidden',
+  }
   outer.appendChild(inner)
 
   document.body.appendChild(outer)
@@ -73,6 +82,7 @@ export default {
       if (val === old) { return }
       const el = this.$el
       const body = document.body
+
       if (val) {//starting
         if (this.val) {
           el.querySelector('.modal-content').focus()
@@ -87,6 +97,8 @@ export default {
         }
       } else {//ending
         this.$emit(this.val ? 'opened' : 'closed')
+
+        // i guess val never come null or undefined
         if (!this.val) {
           el.style.display = 'none'
           body.style.paddingRight = null

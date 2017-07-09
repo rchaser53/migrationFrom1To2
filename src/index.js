@@ -10,10 +10,7 @@ var app = new Vue({
     <div>
       <button v-on:click='toggle'>toggle</button>
       <modal key='test2' :callback='toggle' effect="fade" :value='flag'>
-        <div slot="modal-header" class="modal-header">
-          <h4 class="modal-title">Modal title</h4>
-        </div>
-        <div slot="modal-body" class="modal-body">gya-n</div>
+        <div slot="modal-body" class="modal-body" style="display:block; height:1000px;">gya-n</div>
       </modal>
     </div>
   `,
