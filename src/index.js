@@ -1,13 +1,5 @@
 const Vue = require('vue')
-
-var child = Vue.extend({
-    template: `<div>
-      <h2>nya-n</h2>
-      <div>{{label}}</div>
-    </div>
-    `,
-    props: ['label']
-});
+const child = require('./child')
 
 var app = new Vue({
   el: '#app',
