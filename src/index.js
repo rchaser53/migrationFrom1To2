@@ -1,10 +1,13 @@
 const Vue = require('vue')
+
 const modal = require('./modal.vue');
+const child = require('./child')
 
 var app = new Vue({
   el: '#app',
   components: {
-    modal: modal
+    modal: modal,
+    child: child
   },
   template: `
     <div>
@@ -12,6 +15,7 @@ var app = new Vue({
       <modal key='test2' :callback='toggle' effect="fade" :value='flag'>
         <div slot="modal-body" class="modal-body" style="display:block; height:1000px;">gya-n</div>
       </modal>
+      <child label='howaxtu!?' />
     </div>
   `,
   data: {
