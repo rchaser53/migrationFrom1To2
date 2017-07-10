@@ -4,6 +4,10 @@ const axios = require('axios')
 const modal = require('./modal.vue');
 const child = require('./child')
 
+var VueTouch = require('vue-touch')
+
+Vue.use(VueTouch, {name: 'v-touch'})
+
 var app = new Vue({
   el: '#app',
   components: {
@@ -18,6 +22,11 @@ var app = new Vue({
         <div slot="modal-body" class="modal-body" style="display:block; height:1000px;">gya-n</div>
       </modal>
       <child label='howaxtu!?' />
+      <v-touch v-on:swipeleft="onSwipeLeft">
+        <div style='width:300px;height:300px;display:block;background-color:aqua;'>
+          hogeratta
+        </div>
+      </v-touch>
     </div>
   `,
   data: {
@@ -45,6 +54,9 @@ var app = new Vue({
           .catch((err) => {
             console.error(err)
           })
+    },
+    onSwipeLeft: () => {
+      console.log('swipe left!')
     }
   }
 })
