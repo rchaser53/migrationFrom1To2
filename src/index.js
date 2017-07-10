@@ -1,4 +1,5 @@
 const Vue = require('vue')
+const axios = require('axios')
 
 const modal = require('./modal.vue');
 const child = require('./child')
@@ -11,6 +12,7 @@ var app = new Vue({
   },
   template: `
     <div>
+      <button v-on:click='getHttp'>nya-n</button>
       <button v-on:click='toggle'>toggle</button>
       <modal key='test2' :callback='toggle' effect="fade" :value='flag'>
         <div slot="modal-body" class="modal-body" style="display:block; height:1000px;">gya-n</div>
@@ -34,6 +36,15 @@ var app = new Vue({
     },
     multiple: function(numA, numB) {
       return `class${numA * numB}`
+    },
+    getHttp: () => {
+      axios.get('http://localhost:3000/')
+          .then((res) => {
+            console.log(res)
+          })
+          .catch((err) => {
+            console.error(err)
+          })
     }
   }
 })
