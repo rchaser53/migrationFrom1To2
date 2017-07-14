@@ -1,8 +1,6 @@
 const Vue = require('vue')
 const { ClientTable, Event } = require('vue-tables-2')
 
-console.log(Event, 222)
-
 Vue.use(ClientTable);
 var app = new Vue({
   el: '#app',
