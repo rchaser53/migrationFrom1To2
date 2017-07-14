@@ -5,7 +5,7 @@ module.exports = {
 	context: path.resolve(__dirname, './src'),
   devtool: 'inline-source-map',
   entry: {
-    index: "./index.js"
+    index: "./vueTables.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
