@@ -5,12 +5,13 @@ module.exports = {
 	context: path.resolve(__dirname, './src'),
   devtool: 'inline-source-map',
   entry: {
-    index: "./vueTouch.js"
+    template: "./template.js",
+    noTemplate:  "./noTemplate.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/public/",
-    filename: "bundle.js"
+    filename: "[name].bundle.js"
   },
   resolve: {
     extensions: ['.html', '.js', '.vue']
