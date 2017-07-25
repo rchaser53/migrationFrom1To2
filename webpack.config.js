@@ -5,13 +5,15 @@ module.exports = {
 	context: path.resolve(__dirname, './src'),
   devtool: 'inline-source-map',
   entry: {
-    template: "./template.js",
-    noTemplate:  "./noTemplate.js",
+    // template: "./template.js",
+    // noTemplate:  "./noTemplate.js",
+    index: "./dynamicVue.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/public/",
-    filename: "[name].bundle.js"
+    // filename: "[name].bundle.js"
+    filename: "bundle.js"
   },
   resolve: {
     extensions: ['.html', '.js', '.vue']
