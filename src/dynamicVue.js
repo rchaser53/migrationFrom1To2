@@ -4,13 +4,21 @@ var child;
 
 child = Vue.extend({
   template: "#child",
-  props: ['prop', 'clickevent']
+  props: ['prop', 'clickevent'],
+  mounted: function() {
+    console.log('child')
+  }
 })
 
 Vue.component('child', child)
 
-const arr = [1, 2, 3]
-arr.forEach((elem) => {
+const arr = [1,2,3]
+var index = 0;
+const nyan = () => {
+  const elem = arr[index];
+
+  if (arr.length < index) return
+
   new Vue({
     el: `#app${elem}`,
     components: {
@@ -28,5 +36,7 @@ arr.forEach((elem) => {
       }
     }
   })
-})
 
+  index++
+}
+setInterval(nyan, 10000)
