@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     // template: "./template.js",
     // noTemplate:  "./noTemplate.js",
-    index: "./dynamicVue.js"
+    index: "./transition.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
