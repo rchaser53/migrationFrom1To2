@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     // template: "./template.js",
     // noTemplate:  "./noTemplate.js",
-    index: "./transition.js"
+    index: "./insideTemplate.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
