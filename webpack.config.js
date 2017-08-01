@@ -1,19 +1,20 @@
 const webpack = require('webpack');
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	context: path.resolve(__dirname, './src'),
   devtool: 'inline-source-map',
   entry: {
-    // template: "./template.js",
-    // noTemplate:  "./noTemplate.js",
+    vueTouch: './vueTouch.js',
+    template: "./template.js",
+    noTemplate:  "./noTemplate.js",
     index: "./insideTemplate.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/public/",
-    // filename: "[name].bundle.js"
-    filename: "bundle.js"
+    publicPath: "/templates/",
+    filename: "[name].bundle.js"
   },
   resolve: {
     extensions: ['.html', '.js', '.vue']
@@ -39,6 +40,9 @@ module.exports = {
     }]
   },
   plugins: [
+    // new HtmlWebpackPlugin({
+    //   template: '../insideTemplate.html'
+    // }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
