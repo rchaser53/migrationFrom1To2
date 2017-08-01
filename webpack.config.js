@@ -6,6 +6,7 @@ module.exports = {
 	context: path.resolve(__dirname, './src'),
   devtool: 'inline-source-map',
   entry: {
+    componentInComponent: './componentInComponent.js',
     vueTouch: './vueTouch.js',
     template: "./template.js",
     noTemplate:  "./noTemplate.js",

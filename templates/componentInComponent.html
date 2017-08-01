@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head><title>index</title></head>
+  <body>
+    <div id='app'>
+      {{property}}
+      <!-- <child property="nya-n"> -->
+      <child>
+        <slot>
+            <!-- 親コンポーネントのpropertyを必ず参照する -->
+             <!-- {{property}}  -->
+        </slot>
+      </child>
+
+      <!-- 親コンポーネント内にtemplateが存在するとdivタグが描画される  -->
+       <!-- <template id="childId"> -->
+         <!-- 親コンポーネントのプロパティを参照する -->
+        <!-- <div><slot>{{property}}</slot></div> -->
+      <!-- </template>  -->
+    </div>
+        <!-- divタグは描画されない -->
+        <template id="childId">
+          <!-- 子コンポーネントのプロパティを参照する -->
+          <div><slot>{{property}}</slot></div> 
+        </template> 
+    <script src="./componentInComponent.bundle.js"></script>
+  </body>
+</html>
