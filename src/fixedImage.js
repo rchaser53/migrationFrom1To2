@@ -4,9 +4,29 @@ var app = new Vue({
   el: '#app',
   template: `
   <div>
-    <img class="col-sm-4" style="height: auto;" src="./img/cat1.jpg"></img>
-    <img class="col-sm-4" style="height: auto;" src="./img/cat1.jpg"></img>
-    <img class="col-sm-4" style="height: auto;" src="./img/cat1.jpg"></img>
+    <div class="col-sm-4"> 
+      <a class="thumbnail">
+        <div class="imageOuter" >
+          <img src="img/cat1.jpg" class="squareImage img-responsive full-width" />
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4"> 
+      <a class="thumbnail">
+        <div class="imageOuter" >
+          <img src="img/cat1.jpg" class="squareImage img-responsive full-width" />
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4"> 
+      <a class="thumbnail">
+        <div class="imageOuter" >
+          <img src="img/cat1.jpg" class="squareImage img-responsive full-width" />
+        </div>
+      </a>
+    </div>
   </div>
   `
 })
