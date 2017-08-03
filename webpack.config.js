@@ -10,7 +10,8 @@ module.exports = {
     vueTouch: './vueTouch.js',
     template: "./template.js",
     noTemplate:  "./noTemplate.js",
-    index: "./insideTemplate.js"
+    index: "./insideTemplate.js",
+    fixedImage: './fixedImage.js'
   },
   output: {
     path: path.resolve(__dirname, "dist"),

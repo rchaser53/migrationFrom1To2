@@ -12,6 +12,9 @@ app.get('/mya', (req, res) => {
 });
 
 app.use('/', express.static('templates'))
+app.use('/css', express.static('css'))
+app.use('/img', express.static('img'))
+
 app.use(webpackMiddleware(webpack(require('./webpack.config.js'))))
 
 http.createServer(app)
