@@ -11,7 +11,8 @@ module.exports = {
     template: "./template.js",
     noTemplate:  "./noTemplate.js",
     index: "./insideTemplate.js",
-    fixedImage: './fixedImage.js'
+    fixedImage: './fixedImage.js',
+    setTimeout: './setTimeout.js'
   },
   output: {
     path: path.resolve(__dirname, "dist"),
