@@ -9,16 +9,44 @@ module.exports = new Vue({
     }
   },
   template: `<div>
-    <button v-on:click="directMethod">direct</button>
-    <button v-on:click="bySetMethod">bySet</button>
+    <div>
+      <button v-on:click="syncDirect">sync direct</button>
+      <button v-on:click="asyncDirect">async direct</button>
+    </div>
+    <div>
+      <button v-on:click="syncBySet">bySet</button>
+      <button v-on:click="asyncBySet">bySet</button>
+    </div>
   </div>
   `,
   methods: {
-    directMethod() {
+    syncBySet() {
+      Vue.set(this, 'bySet', !this.bySet)
+      this.timer();
+      Vue.set(this, 'bySet', !this.bySet)
+    },
+    asyncBySet() {
+      Vue.set(this, 'bySet', !this.bySet)
+      setTimeout(() => {
+        Vue.set(this, 'bySet', !this.bySet)
+      }, 1000)
+    },
+    syncDirect() {
+      this.direct = !this.direct
+      this.timer()
       this.direct = !this.direct
     },
-    bySetMethod() {
-      Vue.set(this, 'bySet', !this.bySet)
+    asyncDirect() {
+      this.direct = !this.direct
+      setTimeout(() => {
+        this.direct = !this.direct
+      }, 1000)
+    },
+    timer() {
+      const nowTime = Date.now()
+      while(Date.now() < nowTime + 1000) {
+        console.log(1)
+      }
     }
   },
   watch: {
