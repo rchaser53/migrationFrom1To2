@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = () => {
+        const app = document.querySelector('#app');
+        app.style.top = '300px'
+        // setTimeout(() => {
+        //   app.style.top = '100px'
+        // }, 1500)
+
+        // no mean for transition
+        new Promise((resolve) => {
+          resolve();
+        }).then(() => {
+          app.style.top = '100px'
+        })
+
+      }
+    </script>
+    <style>
+      #app {
+        display: block;
+        width:300px;
+        height:300px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        background-color:aqua;
+        transition: top 1s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
