@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      let abc = { key: 0 }
+
+      const property = Object.getOwnPropertyDescriptor(abc, 'key')
+      console.log(property)
+      const getter = property && property.get
+      Object.defineProperty(abc, 'key', {
+          enumerable: true,
+          configurable: true,
+          // get: function () {
+          //   // console.log(getter)
+          //   // var value = getter ? getter.call(obj) : val;
+          //   // if (Dep.target) {
+          //   //   dep.depend();
+          //   //   if (childOb) {
+          //   //     childOb.dep.depend();
+          //   //   }
+          //   //   if (Array.isArray(value)) {
+          //   //     dependArray(value);
+          //   //   }
+          //   // }
+          //   const value = getter()
+          //   return value
+          // },
+          set: function reactiveSetter (newVal) {
+            // var value = getter ? getter.call(obj) : val;
+            // if (setter) {
+            //   setter.call(obj, newVal);
+            // } else {
+            //   val = newVal;
+            // }
+            console.log(this)
+          }
+        });
+
+        abc.key = 23
+    </script>
+  </head>
+  <body></body>
+</html>
