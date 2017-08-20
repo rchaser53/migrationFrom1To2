@@ -8,9 +8,6 @@ module.exports = {
   entry: {
     componentInComponent: './componentInComponent.js',
     vueTouch: './vueTouch.js',
-    template: "./template.js",
-    noTemplate:  "./noTemplate.js",
-    index: "./insideTemplate.js",
     fixedImage: './fixedImage.js',
     setTimeout: './setTimeout.js',
     watch: './watch.js'
