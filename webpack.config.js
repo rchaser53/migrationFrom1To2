@@ -10,7 +10,8 @@ module.exports = {
     vueTouch: './vueTouch.js',
     fixedImage: './fixedImage.js',
     setTimeout: './setTimeout.js',
-    watch: './watch.js'
+    watch: './watch.js',
+    vuex: './vuex.js'
   },
   output: {
     path: path.resolve(__dirname, "dist"),

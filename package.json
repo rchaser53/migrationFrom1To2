@@ -24,7 +24,8 @@
     "html-webpack-template": "^5.6.0",
     "vue": "^2.3.4",
     "vue-tables-2": "^0.6.53",
-    "vue-touch": "next"
+    "vue-touch": "next",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
